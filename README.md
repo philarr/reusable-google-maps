@@ -9,7 +9,7 @@ It will keep a reference to the DOM element used by `google.maps.Map` and return
 If not, it will lazily load the Maps JS API and create a new instance to be used.
 
 ##Usage
-```
+```js
 import GoogleMap from 'GoogleMapsInstance';
 
 GoogleMap({
