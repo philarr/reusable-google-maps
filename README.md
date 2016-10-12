@@ -13,10 +13,10 @@ If not, it will lazily load the Maps JS API and create a new instance to be used
 import GoogleMap from 'GoogleMapsInstance';
 
 GoogleMap({
-  key: 'ABCDEFG12345',
+  key: 'ABCDEFG12345', //API Key
   zoom: 10,
   disableDefaultUI: true,
-  location: this.props.contact.map
+  location: this.props.contact.map //LatLng array: [123,-123]
 }).then((DOM) => {
   this.refs.map.appendChild(DOM);
 });
