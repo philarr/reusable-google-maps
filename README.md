@@ -14,11 +14,20 @@ import GoogleMap from 'GoogleMapsInstance';
 
 GoogleMap({
   key: 'ABCDEFG12345', //API Key
-  zoom: 10,
+  zoom: 11,
+  navigationControl: false,
+  mapTypeControl: false,
+  scaleControl: false,
+  draggable: false,
+  scrollwheel: false,
   disableDefaultUI: true,
-  location: this.props.contact.map //LatLng array: [123,-123]
-}).then((DOM) => {
-  this.refs.map.appendChild(DOM);
-});
+  location: [123,-123]
+  }).then((result) => {
+    // result is an object with 2 keys, dom (map element) and geo (google geocode result)
+    const { dom, geo } = result;
+    const { mapNode, location } = this.refs;
+    mapNode.appendChild(dom);
+    location.innerHTML = `${geo[2].address_components[1].short_name}, ${geo[2].address_components[3].short_name}`;
+  });
 
 ```
