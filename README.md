@@ -14,14 +14,15 @@ import GoogleMap from 'GoogleMapsInstance';
 
 GoogleMap({
   key: 'ABCDEFG12345', //API Key
+  location: [123,-123], // [lat, lng] array, it will be used to after google maps api is loaded to create latlng object
   zoom: 11,
   navigationControl: false,
   mapTypeControl: false,
   scaleControl: false,
   draggable: false,
   scrollwheel: false,
-  disableDefaultUI: true,
-  location: [123,-123]
+  disableDefaultUI: true
+ 
   }).then((result) => {
     // result is an object with 2 keys, dom (map element) and geo (google geocode result)
     const { dom, geo } = result;
